@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Config 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.chikaho.mapper.BooksMapper">
+  
+    <insert id="addBooks" parameterType="Books">
+        insert into db_libral.tb_books (books_id, books_name, books_msg, books_stock)
+         values (#{books_id}, #{books_name}, #{books_msg}, #{books_stock});
+    </insert>
+    
+    <delete id="deleteBooksById" parameterType="int">
+        delete from db_libral.tb_books where books_id=#{books_id}
+    </delete>
+
+    <select id="queryAllBook" resultType="Books">
+        select * from db_libral.tb_books;
+    </select>
+
+    <update id="updateBooks" parameterType="Books">
+        update db_libral.tb_books set
+         books_name=#{books_name},books_msg=#{books_msg},books_stock=#{books_stock} where books_id=#{books_id};
+    </update>
+
+    <select id="queryBook" resultType="Books">
+        select * from db_libral.tb_books where books_id=#{books_id};
+    </select>
+    
+    <select id="queryBookByName" resultType="Books">
+        select * from db_libral.tb_books where books_name=#{books_name};
+    </select>
+    
+</mapper>

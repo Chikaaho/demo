@@ -1,0 +1,19 @@
+#headerBox {
+    text-align: center;
+    font-size: 15px;
+    background-image: linear-gradient(#00EEEE, #4169E1);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.login-btn {
+    text-align: center;
+}
+
+.loginBox {
+
+}
+
+.hiden_box {
+
+}
