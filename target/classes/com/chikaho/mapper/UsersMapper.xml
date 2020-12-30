@@ -17,7 +17,7 @@
          values (#{user_id},#{user_name},#{user_pwd},#{user_sex},#{admins});
     </insert>
 
-    <update id="updateUser" parameterType="Users">
+    <update id="updateUser" parameterType="int">
         update db_libral.tb_users set
         user_name=#{user_name},user_pwd=#{user_pwd},user_sex=#{user_sex},admins={#admins}
         where user_id=#{user_id};
@@ -27,8 +27,8 @@
         delete from db_libral.tb_users where user_id=#{user_id};
     </delete>
 
-    <insert id="userLoginCheck" parameterType="Users">
+    <select id="userLoginCheck" resultType="Users">
         select * from db_libral.tb_users where user_name=#{user_name} AND user_pwd=#{user_pwd};
-    </insert>
+    </select>
 
 </mapper>

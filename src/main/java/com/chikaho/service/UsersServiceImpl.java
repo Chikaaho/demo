@@ -2,6 +2,7 @@ package com.chikaho.service;
 
 import com.chikaho.mapper.UsersMapper;
 import com.chikaho.pojo.Users;
+import org.apache.ibatis.annotations.Param;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -11,7 +12,7 @@ import java.util.List;
 public class UsersServiceImpl implements UsersService {
 
     @Autowired
-    private UsersMapper usersMapper;
+    private static UsersMapper usersMapper;
 
     public UsersMapper getUsersMapper() {
         return usersMapper;
@@ -41,7 +42,7 @@ public class UsersServiceImpl implements UsersService {
         return usersMapper.deleteUser(user_id);
     }
 
-    public Users userLoginCheck(String user_name, String user_pwd) {
+    public Users userLoginCheck(@Param("user_name") String user_name, @Param("user_pwd") String user_pwd) {
         return usersMapper.userLoginCheck(user_name, user_pwd);
     }
 }

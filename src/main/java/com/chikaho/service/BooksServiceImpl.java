@@ -12,7 +12,7 @@ public class BooksServiceImpl implements BooksService{
 
     //service调用dao(mapper)
     @Autowired
-    private BooksMapper booksMapper;
+    private static BooksMapper booksMapper;
 
     public BooksMapper getBooksMapper() {
         return booksMapper;

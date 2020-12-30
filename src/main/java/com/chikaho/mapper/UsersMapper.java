@@ -24,6 +24,6 @@ public interface UsersMapper {
     int deleteUser(@Param("user_id") int user_id);
 
     // 检查用户登录
-    Users userLoginCheck(@PathVariable("user_name") String user_name, @PathVariable("user_pwd") String user_pwd);
+    Users userLoginCheck(@Param("user_name") String user_name, @Param("user_pwd") String user_pwd);
     
 }

@@ -65,8 +65,30 @@
                 $('#login').removeAttr("disabled");
             }
         });
+        $('#user_name').bind('input propertychange',function () {
+            name_check = document.getElementById("user_name").value;
+            console.log("get name");
+            //$('#login').attr("disabled", "disabled");
+            if (name_check == "" || password_check == "") {
+                $('#login').attr("disabled", "disabled");
+            }
+            if (name_check != "" && password_check != "") {
+                $('#login').removeAttr("disabled");
+            }
+        });
+        $('#user_pwd').bind('input propertychange', function () {
+            password_check = document.getElementById("user_pwd").value;
+            console.log(password_check);
+            //$('#login').attr("disabled", "disabled");
+            if (name_check == "" || password_check == "") {
+                $('#login').attr("disabled", "disabled");
+            }
+            if (name_check != "" && password_check != "") {
+                $('#login').removeAttr("disabled");
+            }
+        });
         $('#login').hover(function () {
-            
+
         })
     });
 </script>
