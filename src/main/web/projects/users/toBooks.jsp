@@ -18,9 +18,9 @@
                 count--;
                 jump(count);
                 if (count <= 0) {
-                    location.href = "/book/allBook";
+                    location.href = "${pageContext.request.contextPath}/book/allBook";
                 }
-            }, 31000);
+            }, 1000);
             jump(3)
         }
     })
