@@ -8,21 +8,24 @@
     <script src="../../statics/js/jquery-3.5.1.js"></script>
 </head>
 <body>
-<p class="text-center">登录成功</p>
+<p class="text-center">登录成功,<span id="num">3</span>秒后将跳转</p>
 <a href="/book/allBook" class="a_click">若未跳转成功,请点击此处手动进入</a>
 </body>
 <script>
-    $(document).ready(function () {
+    $(document).ready(function() {
         function jump(count) {
-            window.setTimeout(function () {
+            window.setTimeout(function(){
                 count--;
-                jump(count);
-                if (count <= 0) {
-                    location.href = "${pageContext.request.contextPath}/book/allBook";
+                if(count > 0) {
+                    $('#num').attr('innerHTML', count);
+                    jump(count);
+                } else {
+                    location.href="${pageContext.request.contextPath}/book/allBook";
                 }
             }, 1000);
-            jump(3)
         }
-    })
+        jump(3);
+    });
+
 </script>
 </html>
