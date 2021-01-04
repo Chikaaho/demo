@@ -20,8 +20,8 @@
     </div>
     <form action="${pageContext.request.contextPath}/book/addBook" method="post">
         <div class="form-group">
-            <label for="book_no">书籍编号</label>
-            <input type="text" name="book_no" class="form-control" id="book_no" required>
+            <label for="books_no">书籍编号</label>
+            <input type="text" name="books_no" class="form-control" id="books_no" required>
         </div>
         <div class="form-group">
             <label for="book_name">书籍名称</label>

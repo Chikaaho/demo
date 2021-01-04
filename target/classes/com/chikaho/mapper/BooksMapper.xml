@@ -6,8 +6,10 @@
 <mapper namespace="com.chikaho.mapper.BooksMapper">
   
     <insert id="addBooks" parameterType="Books">
-        insert into db_libral.tb_books (books_no, books_name, books_msg, books_stock)
-         values (#{books_no}, #{books_name}, #{books_msg}, #{books_stock});
+        insert into db_libral.tb_books
+        (books_no, books_name, books_msg, books_stock)
+        values
+        (#{books_no}, #{books_name}, #{books_msg}, #{books_stock});
     </insert>
     
     <delete id="deleteBooksById" parameterType="int">
@@ -20,11 +22,13 @@
 
     <update id="updateBooks" parameterType="Books">
         update db_libral.tb_books set
-         books_name=#{books_name},books_msg=#{books_msg},books_stock=#{books_stock} where books_id=#{books_id};
+        books_no = #{books_no}, books_name=#{books_name}
+        ,books_msg=#{books_msg},books_stock=#{books_stock}
+        where books_id=#{books_id};
     </update>
 
     <select id="queryBook" resultType="Books">
-        select * from db_libral.tb_books where books_no=#{books_no};
+        select * from db_libral.tb_books where books_id=#{books_id};
     </select>
     
     <select id="queryBookByName" resultType="Books">
