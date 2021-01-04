@@ -38,8 +38,8 @@ public class BooksServiceImpl implements BooksService{
         return booksMapper.updateBooks(books);
     }
 
-    public Books queryBook(int books_no) {
-        return booksMapper.queryBook(books_no);
+    public Books queryBook(int books_id) {
+        return booksMapper.queryBook(books_id);
     }
 
     public Books queryBookByName(String books_name) {

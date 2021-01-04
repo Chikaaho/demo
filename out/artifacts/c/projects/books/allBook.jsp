@@ -61,7 +61,7 @@
                         <td>${books.books_stock}</td>
                         <td>
                             <a class="btn btn-info btn-sm"
-                               href="/book/updateBookPage?id=${books.books_id}">修改</a>
+                               href="/book/updateBookPage/?id=${books.books_id}">修改</a>
                             &nbsp; || &nbsp;
                             <a class="btn btn-danger btn-sm"
                                href="/book/deleteBook/${books.books_id}">删除</a>

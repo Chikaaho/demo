@@ -84,7 +84,7 @@ public class UsersController {
     public String registUser(Users users) {
         System.out.println("addUser=>" + users);
         usersService.addUser(users);
-        return "users/allUsers";
+        return "redirect:users/login";
     }
 
 }

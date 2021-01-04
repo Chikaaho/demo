@@ -66,13 +66,13 @@ public class BooksController {
     }
 
     // 删除书籍
-    @RequestMapping("/deleteBook/{books_no}")
-    public String deleteBookById(@PathVariable("books_no") int id) {
+    @RequestMapping("/deleteBook/{books_id}")
+    public String deleteBookById(@PathVariable("books_id") int id) {
         booksService.deleteBooksById(id);
         return "redirect:/book/allBook";
     }
 
-    // 根据id查询书籍
+    // 根据名称查询书籍
     @RequestMapping("/queryBook")
     public String queryBook(String queryBookName, Model model) {
         Books books = booksService.queryBookByName(queryBookName);

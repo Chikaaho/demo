@@ -39,18 +39,18 @@
 </body>
 <script type="text/javascript">
 
-    var name_check = "";
+    var pwd_check_sec = "";
     var password_check = "";
 
     $(function () {
         $('#user_name').blur(function () {
-            name_check = document.getElementById("user_name").value;
+            pwd_check_sec = document.getElementById("user_name").value;
             console.log("get name");
             //$('#login').attr("disabled", "disabled");
-            if (name_check == "" || password_check == "") {
+            if (pwd_check_sec == "" || password_check == "") {
                 $('#login').attr("disabled", "disabled");
             }
-            if (name_check != "" && password_check != "") {
+            if (pwd_check_sec != "" && password_check != "") {
                 $('#login').removeAttr("disabled");
             }
         });
@@ -58,21 +58,21 @@
             password_check = document.getElementById("user_pwd").value;
             console.log(password_check);
             //$('#login').attr("disabled", "disabled");
-            if (name_check == "" || password_check == "") {
+            if (pwd_check_sec == "" || password_check == "") {
                 $('#login').attr("disabled", "disabled");
             }
-            if (name_check != "" && password_check != "") {
+            if (pwd_check_sec != "" && password_check != "") {
                 $('#login').removeAttr("disabled");
             }
         });
         $('#user_name').bind('input propertychange',function () {
-            name_check = document.getElementById("user_name").value;
+            pwd_check_sec = document.getElementById("user_name").value;
             console.log("get name");
             //$('#login').attr("disabled", "disabled");
-            if (name_check == "" || password_check == "") {
+            if (pwd_check_sec == "" || password_check == "") {
                 $('#login').attr("disabled", "disabled");
             }
-            if (name_check != "" && password_check != "") {
+            if (pwd_check_sec != "" && password_check != "") {
                 $('#login').removeAttr("disabled");
             }
         });
@@ -80,16 +80,13 @@
             password_check = document.getElementById("user_pwd").value;
             console.log(password_check);
             //$('#login').attr("disabled", "disabled");
-            if (name_check == "" || password_check == "") {
+            if (pwd_check_sec == "" || password_check == "") {
                 $('#login').attr("disabled", "disabled");
             }
-            if (name_check != "" && password_check != "") {
+            if (pwd_check_sec != "" && password_check != "") {
                 $('#login').removeAttr("disabled");
             }
         });
-        $('#login').hover(function () {
-
-        })
     });
 </script>
 </html>

@@ -19,6 +19,10 @@
     <form action="/book/updateBook" method="post">
         <input type="hidden" name="books_id" value="${books.books_id}">
         <div class="form-group">
+            <label for="books_no">书籍编号</label>
+            <input type="text" name="books_no" class="form-control" id="books_no" value="${books.books_no}" required>
+        </div>
+        <div class="form-group">
             <label for="book_name">书籍名称</label>
             <input type="text" name="books_name" class="form-control" id="book_name" value="${books.books_name}" required>
         </div>
