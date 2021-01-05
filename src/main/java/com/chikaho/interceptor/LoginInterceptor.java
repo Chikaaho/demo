@@ -12,7 +12,7 @@ public class LoginInterceptor implements HandlerInterceptor {
         //判断session是否为空
         if (request.getSession() == null) {
             //如果没有登录，则去到登录页面
-            response.sendRedirect(request.getContextPath());
+            response.sendRedirect(request.getContextPath() + "/users/login.jsp");
             return false;//验证失败，进行拦截
         }
         //验证通过
