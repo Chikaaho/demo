@@ -31,8 +31,7 @@
                 <input type="radio" name="user_sex" id="user_sex2" value="female">女
             </label>
         </div>
-        <button type="submit" class="btn btn-default" disabled="disabled"
-        id="regist">注册用户</button>
+        <button type="submit" class="btn btn-default" id="regist">注册用户</button>
     </form>
 </div>
 </body>
@@ -51,12 +50,7 @@
             if (pwd_check_sec != "" && password_check != "") {
                 $('#regist').removeAttr("disabled");
             }
-            if (document.getElementById("user_pwd_check").value == "") {
-                alert("请再次输入密码!")
-                return;
-            }
-            let check = document.getElementById("user_pwd_check").value != document.getElementById("user_pwd").value;
-            if (check) {
+            if (document.getElementById("user_pwd_check").value != document.getElementById("user_pwd").value) {
                 console.log("两次输入密码不一致");
             } else {
                 console.log("OK");

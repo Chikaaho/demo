@@ -47,7 +47,7 @@ public class UsersController {
         if (loginCheck == null) {
             model.addAttribute("NAME_OR_PWD_ERROR","账户名或密码输入错误,请检查后重新输入!");
             return "users/login";
-        } else { return "users/toBooks"; }
+        } else { return "books/sakura"; }
     }
 
     // 修改用户信息页面

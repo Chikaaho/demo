@@ -12,20 +12,7 @@
 <a href="/book/allBook" class="a_click">若未跳转成功,请点击此处手动进入</a>
 </body>
 <script>
-    $(document).ready(function() {
-        function jump(count) {
-            window.setTimeout(function(){
-                count--;
-                if(count > 0) {
-                    $('#num').attr('innerHTML', count);
-                    jump(count);
-                } else {
-                    location.href="${pageContext.request.contextPath}/book/allBook";
-                }
-            }, 1000);
-        }
-        jump(3);
-    });
+
 
 </script>
 </html>
