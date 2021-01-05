@@ -20,9 +20,10 @@ public class SpringTest {
 
     @Test
     public void test2() {
-        double x = 1.0d;
-        float q = 1.0f;
-        long z = 1l;
+        boolean flag = false;
+        if (!flag) {
+            System.out.println("false");
+        }
     }
 
 }

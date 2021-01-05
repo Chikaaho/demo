@@ -12,9 +12,4 @@
         <package name="com.chikaho.pojo"/>
     </typeAliases>
 
-    <mappers>
-        <mapper class="com.chikaho.mapper.BooksMapper"/>
-    </mappers>
-
-
 </configuration>
