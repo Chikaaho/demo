@@ -1,16 +1,16 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
+<!doctype html>
 <html>
 <head>
-    <title>Title</title>
-    <link href="https://cdn.staticfile.org/twitter-bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet">
+    <meta charset="utf-8">
+    <title>登录验证中...</title>
+    <link rel="stylesheet" href="../../statics/css/books/sakura.css">
     <link href="../../statics/ico/Chika.ico" rel="icon">
-    <link href="../../statics/css/users/toBooks.css" rel="stylesheet">
-    <script src="../../statics/js/jquery-3.5.1.js"></script>
+    <script src="../../statics/js/sakura-jquery.js"></script>
+    <script src="../../statics/js/books/sakura.js"></script>
 </head>
 <body>
-<p class="text-center">登录成功,<span id="num">3</span>秒后将跳转</p>
-<a href="/book/allBook" class="a_click">若未跳转成功,请点击此处手动进入</a>
-</body>
+<div id="jsi-cherry-container" class="container"></div>
 <script>
     $(document).ready(function() {
         function jump(count) {
@@ -24,8 +24,8 @@
                 }
             }, 1000);
         }
-        jump(3);
+        jump(5);
     });
-
 </script>
+</body>
 </html>

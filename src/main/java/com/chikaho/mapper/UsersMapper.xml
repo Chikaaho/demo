@@ -13,8 +13,8 @@
     </select>
 
     <insert id="addUser" parameterType="Users">
-        insert into db_libral.tb_users (user_id,user_name,user_pwd,user_sex,admins)
-         values (#{user_id},#{user_name},#{user_pwd},#{user_sex},#{admins});
+        insert into db_libral.tb_users (user_name,user_pwd,user_sex)
+         values (##{user_name},#{user_pwd},#{user_sex});
     </insert>
 
     <update id="updateUser" parameterType="int">

@@ -16,13 +16,13 @@ public interface UsersService {
     // 添加用户
     int addUser(Users users);
 
-    // 根据id修改用户
+    // 修改用户
     int updateUser(Users user);
 
     // 根据id删除用户
     int deleteUser(int user_id);
 
     // 检查用户登录
-    Users userLoginCheck(@Param("user_name") String user_name, @Param("user_pwd") String user_pwd);
+    Users userLoginCheck(String user_name, String user_pwd);
 
 }

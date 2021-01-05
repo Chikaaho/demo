@@ -977,7 +977,6 @@ SELECT|sys.sys_config:null
     <column id="301" parent="290" name="admins">
       <Position>5</Position>
       <DataType>varchar(45)|0s</DataType>
-      <NotNull>1</NotNull>
       <DefaultExpression>&apos;visiter&apos;</DefaultExpression>
     </column>
     <key id="302" parent="290" name="PRIMARY">
