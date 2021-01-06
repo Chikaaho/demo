@@ -9,13 +9,15 @@ import javax.servlet.http.HttpServletResponse;
 public class LoginInterceptor implements HandlerInterceptor {
 
     public boolean preHandle(HttpServletRequest request, HttpServletResponse response, Object handler) throws Exception {
-        //判断session是否为空
-        if (request.getSession() == null) {
-            //如果没有登录，则去到登录页面
-            response.sendRedirect(request.getContextPath() + "/users/login.jsp");
-            return false;//验证失败，进行拦截
-        }
-        //验证通过
+//        //登录页面放行
+//        if (request.getRequestURI().contains("loginCheck")) {
+//            return true;
+//        }
+//        //判断session是否为空
+//        if (request.getSession().getAttribute("userLoginInfo") != null) {
+//            return true;
+//        }
+//        request.getRequestDispatcher("/users/loginPage").forward(request, response);
         return true;
     }
 

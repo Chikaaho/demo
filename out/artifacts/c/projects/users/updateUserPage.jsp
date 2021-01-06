@@ -2,7 +2,8 @@
 <html>
 <head>
     <title>修改用户</title>
-    <script src="../../statics/js/jquery-3.5.1.js"></script>
+    <link rel="stylesheet" href="../../statics/css/usersStyle.css">
+    <script type="text/javascript" src="../../statics/js/jquery-3.5.1.js"></script>
     <link href="../../statics/ico/Chika.ico" rel="icon">
 </head>
 <body>
@@ -31,7 +32,6 @@
         </div>
             <label>用户类型</label>
             <select class="form-control">
-                <option></option>
                 <option></option>
                 <option></option>
             </select>

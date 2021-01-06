@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Config 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.chikaho.mapper.UsersMapper">
+
+    <select id="queryAllUsers" resultType="Users">
+        select * from db_libral.tb_users;
+    </select>
+
+    <select id="queryUserById" resultType="Users">
+        select * from db_libral.tb_users where user_id={#user_id};
+    </select>
+
+    <insert id="addUser" parameterType="Users">
+        insert into db_libral.tb_users (user_name,user_pwd,user_sex)
+         values (##{user_name},#{user_pwd},#{user_sex});
+    </insert>
+
+    <update id="updateUser" parameterType="int">
+        update db_libral.tb_users set
+        user_name=#{user_name},user_pwd=#{user_pwd},user_sex=#{user_sex},admins={#admins}
+        where user_id=#{user_id};
+    </update>
+
+    <delete id="deleteUser" parameterType="int">
+        delete from db_libral.tb_users where user_id=#{user_id};
+    </delete>
+
+    <select id="userLoginCheck" resultType="Users">
+        select * from db_libral.tb_users where user_name=#{user_name} AND user_pwd=#{user_pwd};
+    </select>
+
+</mapper>

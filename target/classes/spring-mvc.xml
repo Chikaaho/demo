@@ -24,5 +24,16 @@
         <property name="prefix" value="/projects/"/>
         <property name="suffix" value=".jsp"/>
     </bean>
+    
+    <mvc:interceptors>
+        <mvc:interceptor>
+            <mvc:mapping path="/users/**"/>
+            <bean class="com.chikaho.interceptor.LoginInterceptor"/>
+        </mvc:interceptor>
+        <mvc:interceptor>
+            <mvc:mapping path="/books/**"/>
+            <bean class="com.chikaho.interceptor.LoginInterceptor"/>
+        </mvc:interceptor>
+    </mvc:interceptors>
 
 </beans>

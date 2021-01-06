@@ -10,6 +10,7 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 
+import javax.servlet.http.HttpSession;
 import java.util.List;
 
 @Controller
@@ -21,7 +22,9 @@ public class UsersController {
     private UsersService usersService;
 
     @RequestMapping("/loginPage")
-    public String loginPage() { return "users/login"; }
+    public String loginPage() {
+        return "users/login";
+    }
 
     // 查询全部用户信息
     @RequestMapping("/queryAllUser")
@@ -42,12 +45,17 @@ public class UsersController {
     // 检查登录信息
     @RequestMapping("/loginCheck")
     public String loginCheck(
-            @RequestParam("user_name") String user_name, @RequestParam("user_pwd") String user_pwd, Model model) {
+            @RequestParam("user_name") String user_name,
+            @RequestParam("user_pwd") String user_pwd,
+            Model model, HttpSession session) {
         Users loginCheck = usersService.userLoginCheck(user_name, user_pwd);
         if (loginCheck == null) {
-            model.addAttribute("NAME_OR_PWD_ERROR","账户名或密码输入错误,请检查后重新输入!");
+            model.addAttribute("NAME_OR_PWD_ERROR", "账户名或密码输入错误,请检查后重新输入!");
             return "users/login";
-        } else { return "books/toBooks"; }
+        } else {
+            session.setAttribute("userLoginInfo", user_name);
+            return "books/toBooks";
+        }
     }
 
     // 修改用户信息页面
